@@ -7,6 +7,7 @@ const notFound = require("./middleware/not-found");
 const errorMiddleWare = require("./middleware/error-handler");
 const connectDB = require("./db/connect");
 const productsRouter = require("./routes/products");
+const recipesRouter = require("./routes/recipes");
 
 // Middleware
 app.use(express.json());
@@ -18,7 +19,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1/products", productsRouter);
-
+app.use("/api/v1/recipes", recipesRouter);
 // Products route
 app.use(notFound);
 app.use(errorMiddleWare);
