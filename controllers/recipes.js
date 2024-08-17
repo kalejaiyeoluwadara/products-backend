@@ -1,12 +1,12 @@
 const recipes = require("../db.json");
 
 const getRecipes = (req, res) => {
-  res.status(200).json({ recipes });
+  res.status(200).json(recipes);
 };
 
 const getSingleRecipe = (req, res) => {
   const { id } = req.params;
-  const recipe = recipes.recipes.find((r) => r.id === id);
+  const recipe = recipes.find((r) => r.id === id);
 
   if (recipe) {
     res.status(200).json({ recipe });
